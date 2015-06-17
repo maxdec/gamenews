@@ -1,0 +1,14 @@
+/*
+* Globals
+*/
+body {
+  padding-top: 62px;
+}
+
+.newsblock {
+  border: 1px solid red;
+}
+
+.newsblock img {
+  width: 100%;
+}
