@@ -10,11 +10,13 @@
   "author": "Maxence Decrosse",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.12.4",
     "flux": "~2.0.1",
     "keymirror": "~0.1.1",
     "object-assign": "~2.0.0",
     "react": "~0.12.2",
-    "reactify": "^1.0.0"
+    "reactify": "^1.0.0",
+    "request": "^2.58.0"
   },
   "browserify": {
     "transform": [

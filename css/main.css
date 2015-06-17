@@ -5,10 +5,46 @@ body {
   padding-top: 62px;
 }
 
-.newsblock {
-  border: 1px solid red;
+.newscolumn {
+  border-right: 1px solid #ccc;
+}
+.newscolumn:last-child {
+  border: none;
 }
 
-.newsblock img {
+.newscolumn img {
   width: 100%;
+}
+
+.newsarticle {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 190px;
+  margin-bottom: 10px;
+}
+
+.newsarticle > .bg {
+  position: relative;
+  height: inherit;
+  background-size: cover;
+  filter: blur(2px) brightness(50%);
+}
+
+.newsarticle > .title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100%-10px);
+  height: calc(100%-10px);
+  font-size: 32px;
+  color: white;
+}
+
+.newsarticle:hover > .title {
+  display: none;
+}
+
+.newsarticle:hover > .bg {
+  filter: none;
 }

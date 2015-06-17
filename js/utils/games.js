@@ -3,7 +3,7 @@
 module.exports = {
   csgo: {
     name: 'CS:GO',
-    img: '/img/csgo.jpg',
+    img: '/img/csgo.png',
     feeds: [
       'http://www.eclypsia.com/fr/cs-go/flux.xml'
     ]
