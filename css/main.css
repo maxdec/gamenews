@@ -5,8 +5,20 @@ body {
   padding-top: 62px;
 }
 
+html,
+body,
+#app,
+.app-content,
+.app-content > .container-fluid,
+.app-content > .container-fluid > .row,
+.newscolumn {
+  height: 100%;
+  max-height: 100%;
+}
+
 .newscolumn {
   border-right: 1px solid #ccc;
+  max-height: 100%;
 }
 .newscolumn:last-child {
   border: none;
@@ -16,35 +28,40 @@ body {
   width: 100%;
 }
 
+.newscolumn > .scroll-list {
+  max-height: calc(100% - 175px);
+  overflow-y: auto;
+}
+
 .newsarticle {
-  position: relative;
   display: block;
   width: 100%;
-  height: 190px;
+  height: 300px;
   margin-bottom: 10px;
+  color: inherit;
+  text-decoration: none;
 }
 
-.newsarticle > .bg {
-  position: relative;
-  height: inherit;
+.newsarticle:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.newsarticle > .img {
   background-size: cover;
-  filter: blur(2px) brightness(50%);
+  height: 66%;
+  border-radius: 3px 3px 0 0;
 }
 
-.newsarticle > .title {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: calc(100%-10px);
-  height: calc(100%-10px);
-  font-size: 32px;
-  color: white;
+.newsarticle > .infos {
+  height: 33%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 3px 3px;
+  background-color: rgba(220, 220, 220, 0.2);
 }
 
-.newsarticle:hover > .title {
-  display: none;
-}
 
-.newsarticle:hover > .bg {
-  filter: none;
+.newsarticle:hover > .date {
+  float: right;
 }

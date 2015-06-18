@@ -23,7 +23,7 @@ module.exports = React.createClass({
   // },
   render: function () {
     return (
-      <div>
+      <div className="app-content">
         <Navbar />
 
         <div className="container-fluid">

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Video games news aggregator",
   "scripts": {
-    "start": "serve",
+    "start": "node server",
     "build": "browserify -t reactify js/main.jsx -o bundle.js",
     "watch": "watchify -t reactify js/main.jsx -o bundle.js --debug -v"
   },
@@ -14,7 +14,8 @@
     "flux": "~2.0.1",
     "keymirror": "~0.1.1",
     "object-assign": "~2.0.0",
-    "react": "~0.12.2",
+    "react": "~0.13.3",
+    "react-list": "^0.6.0",
     "reactify": "^1.0.0",
     "request": "^2.58.0"
   },

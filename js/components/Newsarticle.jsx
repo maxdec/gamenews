@@ -11,9 +11,12 @@ module.exports = React.createClass({
     };
 
     return (
-      <a href={article.url} target="_blank" className="newsarticle" title={article.title}>
-        <div className="bg" style={style} ></div>
-        <div className="title">{article.title}</div>
+      <a className="newsarticle" href={article.url} target="_blank">
+        <div className="img" style={style} />
+        <div className="infos">
+          <small>{article.date.toDateString()}</small>
+          <h4>{article.title}</h4>
+        </div>
       </a>
     );
   }

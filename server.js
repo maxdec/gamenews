@@ -24,15 +24,7 @@ function _allowCrossDomain(req, res, next) {
 app.route('/forward')
 .options(_allowCrossDomain)
 .get(function (req, res) {
-  console.log(req.query.url);
   request(req.query.url).pipe(res);
-  // request(req.query.url, function (error, response, body) {
-  //   if (!error && response.statusCode === 200) {
-  //     res.send(body);
-  //   } else {
-  //     res.send('LOLOLOLOLOL');
-  //   }
-  // });
 });
 
 var port = 1337;

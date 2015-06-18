@@ -4,6 +4,7 @@ var React = require('react/addons');
 var games = require('../utils/games');
 var Newsarticle = require('./Newsarticle.jsx');
 var api = require('../utils/api');
+var ReactList = require('react-list');
 
 module.exports = React.createClass({
   getInitialState: function () {
@@ -17,6 +18,7 @@ module.exports = React.createClass({
           return {
             title: article.getElementsByTagName('title')[0].textContent,
             desc: article.getElementsByTagName('description')[0].textContent,
+            date: new Date(article.getElementsByTagName('pubDate')[0].textContent),
             url: article.getElementsByTagName('link')[0].textContent,
             img: article.getElementsByTagName('media:content')[0].attributes.url.value
           };
@@ -24,18 +26,30 @@ module.exports = React.createClass({
       });
     }.bind(this));
   },
+
+  renderItem: function (index, key) {
+    return <Newsarticle article={this.state.articles[index]} key={key} />;
+  },
+
+  itemSizeGetter: function () {
+    return 310;
+  },
+
   render: function () {
     var game = games[this.props.game];
-
-    var articles = this.state.articles.map(function (article) {
-      return <Newsarticle article={article} key={article.url} />;
-    });
 
     return (
       <div className="col-md-3 newscolumn">
         <img src={game.img} alt={game.name}/>
-
-        {articles}
+        <hr />
+        <div className="scroll-list">
+          <ReactList
+            itemRenderer={this.renderItem}
+            length={this.state.articles.length}
+            itemSizeGetter={this.itemSizeGetter}
+            type='uniform'
+          />
+        </div>
       </div>
     );
   }
