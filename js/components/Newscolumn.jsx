@@ -20,7 +20,7 @@ module.exports = React.createClass({
             desc: article.getElementsByTagName('description')[0].textContent,
             date: new Date(article.getElementsByTagName('pubDate')[0].textContent),
             url: article.getElementsByTagName('link')[0].textContent,
-            img: article.getElementsByTagName('media:content')[0].attributes.url.value
+            img: article.getElementsByTagNameNS('http://search.yahoo.com/mrss/', 'content')[0].getAttribute('url')
           };
         })
       });
